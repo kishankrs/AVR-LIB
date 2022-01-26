@@ -8,10 +8,10 @@ void uart_init (void)
 	UBRRH = (x>>8); //shift the register right by 8 bits(putting x value in UBRRH id its higher than 8 bit)
 	UBRRL = x;      //set baud rate
 	
-	UCSRB| = (1<<TXEN) | (1<<RXEN) ; //Enable receiver and transmitter
+	UCSRB|= (1<<TXEN) | (1<<RXEN) ; //Enable receiver and transmitter
 	
 	//	UCSRC |= (1<<URSEL) | (1<<USBS) | (3<<UCSZ0); //8bit data, 2 stop bits [uncomment this line & comment next line if you wish to send 2 stop bits]
-		UCSRC |= (1<<URSEL) | (1<<UCSZ0) | (1<<UCSz1); //8bit data, 1 stop bit
+		UCSRC |= (1<<URSEL) | (1<<UCSZ0) | (1<<UCSZ1); //8bit data, 1 stop bit
 		
 }
 
